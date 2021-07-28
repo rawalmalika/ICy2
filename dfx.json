@@ -1,0 +1,41 @@
+{
+  "canisters": {
+    "product": {
+      "main": "src/Product/main.mo",
+      "type": "motoko"
+    },
+    
+    "user":{
+      "main": "src/user/main.mo",
+      "type": "motoko"
+    },
+
+    "user1":{
+      "main": "src/user1/main.mo",
+      "type": "motoko"
+    },
+
+    "reserves":{
+      "main": "src/Reserve/main.mo",
+      "type": "motoko"
+    },
+
+    "treasury":{
+      "main": "src/Treasury/main.mo",
+      "type": "motoko"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "dfx": "0.7.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
