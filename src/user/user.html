@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<style>
+    .content {
+      max-width: 500px;
+      margin: auto;
+    }
+    </style>
+<html>
+<head>
+    <body style="background-color: rgb(131, 147, 190) ">
+</head>
+
+<body>
+
+<h1>
+<img src="snowflake.png"alt ="snowflake.png" height = "100" width = "100">
+&nbsp;&nbsp;&nbsp;
+Project ICy Demo Page
+</h1>
+
+</body>
+</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="script.js" defer></script>
+  <link href="styles.css" rel="stylesheet">
+  <title>Tabs</title>
+</head>
+<body>
+  <ul class="tabs">
+    <li data-tab-target="#home" class="active tab">User Page</li>
+    <li data-tab-target="#pricing" class="tab">About</li>
+    <li data-tab-target="#about" class="tab">Developers</li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" data-tab-content class="active">
+        <body>
+            <section id="ID_name"></section>
+            <div class="container">
+                <div id="header">
+                    <div id="Current Collateral Ratio"></div>
+                    <div id="Display ICP"></div>
+                    <div id="SDR Outstanding"></div>
+                </div>
+                <div id="main-content">
+                    <p>Create an account and begin borrowing below:</p>
+                    <ul id="methods">
+                                    <li id="Create Account">
+                                        <div class="signature">
+                                            <b>Create Account</b>
+                                        </div>
+                                        <div class="input-container" id="accntInput">
+                                            <span>
+                                                <input class="argument" placeholder="Name" autocomplete="off">
+                                                <span class="status"></span>
+                                            </span>
+                                        </div>
+                            <div class="button-container" id="accntBtn">
+                                <button class="results" id="test" onclick="accountFunction()">Submit</button>
+                            </div>
+                            <div class="result" style="display:flex;" id="accntResult"></div>
+                            <p id="demo"></p>
+                            <div class="left">
+                                <div class="text-result" style="display: flex;"></div>
+                                <div class="ui-result" style="display:none;"></div>
+                                <div class="json-result" style="display: none;">undefined</div>
+                            </div>
+                        </li>
+                        <li id="View ICP Balance">
+                            <div class="signature">
+                                <b>View Current ICP Token Balance:</b>
+                                <div class="button-container" id="ICPButton" onclick="ICPFunction()">
+                                    <button class="results" id="test">View ICP Balance</button>
+                                </div>
+                                <div class="result" style="display:flex;" id="balance"></div>
+                            </div>
+                        </li>
+                        <li id="View Cycle Balance">
+                            <div class="signature">
+                                <b>View Cycle Balance</b>
+                            </div>
+                            <div class="input-container"></div>
+                            <div class="button-container">
+                                <button class="result" id="TroveBtn" onclick = "TroveFunc()">View Cycle Balance</button>
+                            </div>
+                            <div class="result" style="display:flex;" id="Trove-Result"></div>
+                            <div class="left">
+                            </div>
+                        </li>
+                        <li id="Mint Cycles">
+                            <div class="signature">
+                                <b>Mint Cycles</b>
+                                
+                            </div>
+                            <input class="argument"  autocomplete="off">
+                            <div class="input-container">
+                                <span>
+                                  
+                                    <span class="status"></span>
+                                </span>
+                            </div>
+                            <div class="button-container">
+                                <button class="results" onclick="DepositICPFunc()">Mint Cycles</button>
+                            </div>
+                            <div class="result" style="display:flex;" id="ICP-Deposit-result"></div>
+                            <div class="left">
+                                <div class="text-result" style="display: flex;"></div>
+                                <div class="ui-result" style="display:none;"></div>
+                                <div class="json-result" style="display: none;">undefined</div>
+                            </div>
+                        </li>
+                        <li id="Mint ICP">
+                            <div class="signature">
+                                <b>Mint ICP</b>
+                            </div>
+                            <input class="argument"  autocomplete="off">
+                            <div class="input-container">
+                                <span>
+                                    
+                                    <span class="status"></span>
+                                </span>
+                            </div>
+                            <div class="button-container">
+                                <button class="results" onclick="DepositSDRFunc()">Mint ICP</button>
+                            </div>
+                            <div class="result" style="display:flex;" id="DepsitSDRResults"></div>
+                            <div class="left">
+                                <div class="text-result" style="display: flex;"></div>
+                                <div class="ui-result" style="display:none;"></div>
+                                <div class="json-result" style="display: none;">undefined</div>
+                            </div>
+                        </li>
+                        <li id="Transfer Cycles">
+                            <div class="signature">
+                                <b>Transfer Cycles</b>
+                            </div>
+                            <input class="argument"  autocomplete="off">
+                            <div class="input-container">
+                                <span>
+        
+                                    <span class="status"></span>
+                                </span>
+                            </div>
+                            <div class="button-container">
+                                <button class="results" onclick="WithdrawICPFunc()">Transfer Cycles</button>
+                            </div>
+                            <div class="result" style="display:flex;" id="WithdrawICPResults"></div>
+                            <div class="left">
+                                <div class="text-result" style="display: flex;"></div>
+                                <div class="ui-result" style="display:none;"></div>
+                                <div class="json-result" style="display: none;">undefined</div>
+                            </div>
+                        </li>
+                        <li id="Transfer ICP">
+                            <div class="signature">
+                                <b>Transfer ICP</b>
+                            </div>
+                            <input class="argument"  autocomplete="off">
+                            <div class="input-container">
+                                <span>
+                                   
+                                    <span class="status"></span>
+                                </span>
+                            </div>
+                            <div class="button-container">
+                                <button class="results" onclick="WithDrawSDRFunc()">Transfer ICP</button>
+                            </div>
+                            <div class="result" style="display:flex;" id="WithdrawSDRResults"></div>
+                            <div class="left">
+                                <div class="text-result" style="display: flex;"></div>
+                                <div class="ui-result" style="display:none;"></div>
+                                <div class="json-result" style="display: none;">undefined</div>
+                            </div>
+                            <li id="Withdraw ICP">
+                                <div class="signature">
+                                    <b>Withdraw ICP</b>
+                                </div>
+                                <input class="argument"  autocomplete="off">
+                                <div class="input-container"></div>
+                                <div class="button-container">
+                                    <button class="result" id="CloseTroveBtn" onclick="CloseTroveFunc()">Withdraw</button>
+                                </div>
+                                <div class="result" style="display:flex;" id="CloseTroveResult"></div>
+                                <div class="left">
+                                </div>
+                            </li>
+                        </li>
+                    </ul>
+                </div>
+                <div class="javascript-test">
+                    <p id="trove-test"></p>
+                </div>
+            </div>
+            <script>
+                function accountFunction() {
+                    document.getElementById("demo").innerHTML = "Congratulations, Malika! Your account has been opened.";
+                }
+                function ICPFunction() {
+                    document.getElementById("balance").innerHTML = "10,000 ICP"
+                }
+                function TroveFunc(){
+                    document.getElementById("Trove-Result").innerHTML = "10,000 Cycles"
+                }
+                function DepositICPFunc(){
+                    document.getElementById("ICP-Deposit-result").innerHTML = "Minted 500 Cycles"
+                }
+                function WithDrawSDRFunc(){
+                    document.getElementById("WithdrawSDRResults").innerHTML = "Transferred 5000 Tokens"
+                }
+                function WithdrawICPFunc() {
+                    document.getElementById("WithdrawICPResults").innerHTML = "Transferred 5000 Cycles"
+                }
+                function DepositSDRFunc(){
+                    document.getElementById("DepsitSDRResults").innerHTML = "Minted 500 Tokens"
+                }
+                function CloseTroveFunc(){
+                    document.getElementById("CloseTroveResult").innerHTML = "Cannot Withdraw 6000 tokens, insufficient balance."
+                }
+            </script>
+        </body>
+    </div>
+    <div id="pricing" data-tab-content>
+        <h2><span style="background-color: rgb(138, 165, 253)">Introduction to ICy (Internet Computer Yield)</span></h2>
+        <p>
+        Project ICy was developed by Duke Undergraduate Researchers through Duke CS+ summer programming. ICy is a Decentralized Lending Protocol for the Internet Computer. Similar to Aave, ICy is intended for users to be able to lend, borrow, and earn interest on crypto assets without any intermediary involvement. 
+        <h2><span style="background-color: rgb(138, 165, 253)">Overview</span></h2>
+        ICy uses 7 canisters (Database, Product, Reserves, Treasury, Price Oracle, User A, User B, User Assets), and currently, it can be deployed locally and User A and User B can interact. Moreover, an arbitrary user can create an account in the database and keep track of their token and cycle amounts. Users will receive receipts for transactions in terms of ATokens and ACycles that will earn interest. The reserve canister is used to isolate assets and calculate liquidity, and the price oracle canister feeds for the exchange rate of the assets. 
+        <h2><span style="background-color: rgb(138, 165, 253)">Canisters</span></h2>
+        There are 7 canisters used: Database, Product, Reserves, Treasury, Price Oracle, User A, User B, and User Assets. 
+        <h2><span style="background-color: rgb(138, 165, 253)">Treasury</span></h2>
+        The Treasury canister can mint ICP and Cycle tokens to then transfer to the User Canister. The treasury keeps track of its balance.
+        <h2><span style="background-color: rgb(138, 165, 253)">Reserves</span></h2>
+        The Reserve canister keeps track of available tokens for borrowing as well as the amount locked up for collateral. Essentially, it serves the role of a bank.
+        <h2><span style="background-color: rgb(138, 165, 253)">Product</span></h2>
+        Keeps track of all the aTokens outstanding. This canister interacts with the Reserve Canister by organizing User deposits and collateral to determine liquidity of specific token.
+        <h2><span style="background-color: rgb(138, 165, 253)">User</span></h2>
+        Through the User Canister, a user can check their balance (similar to a digital wallet). A user can deposit ICP and Cycle tokens to the Product Canister to earn interest and in return be given back aTokens. A user can also redeem a deposit and borrow from the Product Canister if the User Canister has deposited enough tokens as a collateral.
+        <h2><span style="background-color: rgb(138, 165, 253)">User Assets</span></h2>
+        The User Assets canister is meant solely for the front-end code that implement in the Motoko created functions. Project ICy is using HTML and Javascript.
+        <h2><span style="background-color: rgb(138, 165, 253)">Price Oracle</span></h2>
+        This canister fetches the current ICP to cycles exchange rate in real time (which in the NNS is updated every ten minutes).
+    </p>
+    </div>
+    <div id="about" data-tab-content>
+      <h1>Developers</h1>
+      <img src = "profphoto.jpg" alt = "profphoto.jpg" height = "150" width = "100">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+      <img src="dylanpaul.jpg"alt ="dylanpaul.jpg" height = "150" width = "100">
+
+      <h2>Malika Rawal</h2>
+      <p> Malika is from Charlotte, NC and is majoring in Economics with a concentration in Finance, minoring
+          in Computer Science, and doing the Markets & Management Certificate at Duke University. She is interested in 
+          fintech, investment strategy, software development. 
+      </p>
+
+      <h2> Dylan Paul </h2>
+      <p>  Dylan is a sophomore at Duke University from Long Island, New York. Dylan is majoring in Computer Science
+          with a concentration in AI/ML as well as minoring in Finance. Dylan is very interested in Decentralized Finance as well as machine learning
+          and hopes to work in one of those fields after Duke.
+      </p>
+
+      <h1> Researchers </h1>
+      Lead Professor: Luyao Zhang
+      <br> 
+        Co-Lead Professors: Kartik Nayak, Fan Zhang, Yulin Liu
+        <br>
+        Graduate Mentor: Derrick Adam
+        <br>
+         Undergraduate Researchers: Dylan Paul and Malika Rawal
+        <br>
+        Research Support: Tianyu Wu, William Zhao, Elliot Ha, Saad Lahrichi, Ray Zhu
+
+    </div>
+  </div>
+</body>
+</html>
